@@ -59,7 +59,7 @@ module.exports = {
         props: { name },
       });
 
-      if (useSCSS) {
+      if (useSCSS == 'Yes') {
         await toolbox.template.generate({
           template: 'scss.ejs',
           target: filename + '/index.scss',
@@ -67,7 +67,7 @@ module.exports = {
         });
       }
 
-      if (useTypeScript) {
+      if (useTypeScript == 'Yes') {
         const moduleName = name.charAt(0).toUpperCase() + name.slice(1);
 
         await toolbox.template.generate({
