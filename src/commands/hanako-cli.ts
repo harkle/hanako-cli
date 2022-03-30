@@ -3,11 +3,11 @@ import { GluegunCommand } from 'gluegun'
 
 
 const command: GluegunCommand = {
-  name: 'hanako',
+  name: 'hanako-cli',
   run: async toolbox => {
     const { print } = toolbox
 
-    print.info('Welcome to Hanako CLI')
+    print.info('Welcome to your CLI')
   },
 }
 

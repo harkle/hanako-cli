@@ -18,7 +18,7 @@ module.exports = {
         type: 'select',
         name: 'type',
         message: 'Select a page type',
-        choices: ['Archive', 'Root', 'Single']
+        choices: ['archive', 'template', 'single']
       });
 
       pageType = type;
@@ -45,8 +45,8 @@ module.exports = {
     const questions = [askName, askSCSS, askTS]
     const { name, useSCSS, useTypeScript } = await toolbox.prompt.ask(questions)
 
-    const pageTypeAdditionalS = (pageType !== 'root') ? 's' : '';
-    const filename = ('views/twig/' + type + 's/' + ((pageType) ? pageType + pageTypeAdditionalS + '/' : '') + name).toLowerCase();
+    const pageTypeAdditionalS = (pageType !== 'root' && pageType !== 'page-templates') ? 's' : '';
+    const filename = ('views/twig/' + type + 's/' + ((pageType) ? pageType + pageTypeAdditionalS + '/' : '') + name);
     
     // Create the module
     const alreadyExisting = await filesystem.exists(filename);
@@ -59,7 +59,7 @@ module.exports = {
         props: { name },
       });
 
-      if (useSCSS == 'Yes') {
+      if (useSCSS === 'Yes') {
         await toolbox.template.generate({
           template: 'scss.ejs',
           target: filename + '/index.scss',
@@ -67,7 +67,7 @@ module.exports = {
         });
       }
 
-      if (useTypeScript == 'Yes') {
+      if (useTypeScript === 'Yes') {
         const moduleName = name.charAt(0).toUpperCase() + name.slice(1);
 
         await toolbox.template.generate({

@@ -1,11 +1,11 @@
 {
-  "name": "hanako",
-  "version": "0.0.2",
-  "description": "hanako CLI",
+  "name": "hanako-cli",
+  "version": "0.0.1",
+  "description": "hanako-cli CLI",
   "private": true,
   "types": "build/types/types.d.ts",
   "bin": {
-    "hanako": "bin/hanako"
+    "hanako-cli": "bin/hanako-cli"
   },
   "scripts": {
     "format": "prettier --write **/*.{js,ts,tsx,json}",

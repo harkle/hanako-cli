@@ -1,10 +1,10 @@
-# Plugin guide for hanako
+# Plugin guide for hanako-cli
 
-Plugins allow you to add features to hanako, such as commands and
+Plugins allow you to add features to hanako-cli, such as commands and
 extensions to the `toolbox` object that provides the majority of the functionality
-used by hanako.
+used by hanako-cli.
 
-Creating a hanako plugin is easy. Just create a repo with two folders:
+Creating a hanako-cli plugin is easy. Just create a repo with two folders:
 
 ```
 commands/
@@ -42,6 +42,6 @@ This is then accessible in your plugin's commands as `toolbox.bar`.
 
 # Loading a plugin
 
-To load a particular plugin (which has to start with `hanako-*`),
-install it to your project using `npm install --save-dev hanako-PLUGINNAME`,
-and hanako will pick it up automatically.
+To load a particular plugin (which has to start with `hanako-cli-*`),
+install it to your project using `npm install --save-dev hanako-cli-PLUGINNAME`,
+and hanako-cli will pick it up automatically.
